@@ -2,7 +2,7 @@ import { initializeApp } from 'firebase/app'
 import { getAuth } from 'firebase/auth'
 
 export default defineNuxtPlugin(() => {
-  const app = initializeApp( {
+  const app = initializeApp({
     apiKey: "AIzaSyD7HNiatrCf4rhH-TZYHZ8oi3LXK8yN3NI",
     authDomain: "nuxt3-bug.firebaseapp.com",
     projectId: "nuxt3-bug",
