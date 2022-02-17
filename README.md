@@ -5,7 +5,6 @@
 Make sure to install the dependencies and provide firebase creadentials
 
 ```bash
-cp .env.sample .env
 npm install
 ```
 
@@ -26,9 +25,6 @@ npx nuxi build && npx nuxi preview
 ```
 
 ## Bug description
-
-After setup edit .env file and set firebase credentials
-Then run 
 
 ```bash
 npx nuxi dev
@@ -58,19 +54,3 @@ Open `http://localhost:3000`. There are no error in server console. And auth mod
 ### Summarize
 In total, we have that nuxt dev mode and prod mode handles differenly `firebase-js-sdk` in SSR.
 
-### Note
-If in case you do not specify firebase credentialse in .env in dev mode you get same Error but in production you will get error that 
-```log
-Firebase: Error (auth/invalid-api-key).
-  at createErrorInternal (file://./server/node_modules/@firebase/auth/dist/node-esm/index-2bbaab7c.js:466:40)  
-  at _assert (file://./server/node_modules/@firebase/auth/dist/node-esm/index-2bbaab7c.js:470:15)  
-  at file://./server/node_modules/@firebase/auth/dist/node-esm/index-2bbaab7c.js:5919:13  
-  at Component.instanceFactory (file://./server/node_modules/@firebase/auth/dist/node-esm/index-2bbaab7c.js:5936:11)  
-  at Provider.getOrInitializeService (file://./server/node_modules/@firebase/component/dist/esm/index.esm2017.js:290:39)  
-  at Provider.initialize (file://./server/node_modules/@firebase/component/dist/esm/index.esm2017.js:234:31)  
-  at initializeAuth (file://./server/node_modules/@firebase/auth/dist/node-esm/index-2bbaab7c.js:584:27)  
-  at getAuth (file://./server/node_modules/@firebase/auth/dist/node-esm/index-2bbaab7c.js:5985:12)  
-  at file://./server/chunks/app/server.mjs:3044:16  
-  at callWithNuxt (file://./server/chunks/app/server.mjs:335:20)
-```
-This error means that firebase auth initialized without proper credentials. And it is different from error in dev mode.
